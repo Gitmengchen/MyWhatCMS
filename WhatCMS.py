@@ -10,9 +10,9 @@ def MD5(data):
 	return m2.hexdigest()
 
 def Check(url, tmp, data, step, j):
-	if(glo.FLAG == True):
-		return 0
 	for i in range(step * j,(step * (j + 1))):
+		if(glo.FLAG == True):
+			return 0
 		url = tmp
 		url = url + data[i]['url']
 		try:
