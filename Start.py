@@ -3,10 +3,8 @@
 
 import json
 import threading
+#自写库
 import WhatCMS
-
-
-
 
 if __name__ == '__main__':
 	with open('data.json', 'r') as file:#读取数据
