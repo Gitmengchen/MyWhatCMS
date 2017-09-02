@@ -13,13 +13,10 @@ def Check(url, tmp, data, step, j):
 	for i in range(step * j,(step * (j + 1))):
 		if(glo.FLAG == True):
 			return 0
-		url = tmp
-		url = url + data[i]['url']
 		try:
+			url = tmp
+			url = url + data[i]['url']
 			r = requests.get(url)
-		except:
-			continue
-		finally:
 			if(data[i]['md5'] == ""):	
 				code = r.status_code
 				if(code == 200):
@@ -35,3 +32,5 @@ def Check(url, tmp, data, step, j):
 					print(url)
 					print(data[i]['name'])
 					break
+		except:
+			continue

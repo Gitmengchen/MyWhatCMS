@@ -22,6 +22,8 @@ if __name__ == '__main__':
 	for j in range(int(th)):#创建多线程
 		t = threading.Thread(target=WhatCMS.Check,args=(url,tmp,data,step,j))
 		threads.append(t)
+	t = threading.Thread(target=WhatCMS.Check,args=(url,tmp,data,step,int(th)))
+	threads.append(t)
 
 	for i in range(len(threads)):
 		threads[i].start()
